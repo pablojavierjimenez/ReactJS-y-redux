@@ -6,8 +6,19 @@ import Home from "./components/Home";
 import Header from "./components/Header/Header.js";
 
 class App extends Component {
+  state = {
+    miau: "bienvenido a Miau",
+  }
+
+  cambiarTextoDelEstado = () => {
+    this.setState({
+      miau: "Hola Mundo",
+    });
+  }
+
   render() {
-    const miau = "bienvenido Miau";
+    const { miau } = this.state;
+    const texto = "Hola Gatos";
     const clickHandler = (text) => {
       console.log(text);
     };
@@ -21,7 +32,11 @@ class App extends Component {
         {/**
          * **Header** is an example of an stateLess component
          */}
+        <Header miau={texto} manejaClick={clickHandler} homeLink="Home" />
         <Header miau={miau} manejaClick={clickHandler} homeLink="Home" />
+        <p onClick={this.cambiarTextoDelEstado} className="App-intro">
+          {miau}
+        </p>
         {/**
          * _Acerca de lo elemento hijos de un componente_
          * los componentes pueden utilizarse como un cierre en si mismos,
