@@ -4,6 +4,7 @@ import "./App.css";
 // COMPONENTS
 import Home from "./components/Home";
 import Header from "./components/Header/Header.js";
+import Paragraph from './components/Paragraph/Paragraph.js';
 
 class App extends Component {
   state = {
@@ -34,6 +35,9 @@ class App extends Component {
          */}
         <Header miau={texto} manejaClick={clickHandler} homeLink="Home" />
         <Header miau={miau} manejaClick={clickHandler} homeLink="Home" />
+        <Paragraph>
+          {miau}
+        </Paragraph>
         <p onClick={this.cambiarTextoDelEstado} className="App-intro">
           {miau}
         </p>
