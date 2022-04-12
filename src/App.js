@@ -1,23 +1,27 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
 // COMPONENTS
-import Home from './components/Home';
-import Header from './components/Header/Header.js';
+import Home from "./components/Home";
+import Header from "./components/Header/Header.js";
 
 class App extends Component {
   render() {
-    let textFromApp = 'como este que viene directo del componente app.js';
+    const miau = "bienvenido Miau";
+    const clickHandler = (text) => {
+      console.log(text);
+    };
+    let textFromApp = "como este que viene directo del componente app.js";
     let user = {
-      name: 'jey jey',
-      hobbies: ['running', 'play violin']
+      name: "jey jey",
+      hobbies: ["running", "play violin"],
     };
     return (
       <div className="App">
         {/**
          * **Header** is an example of an stateLess component
          */}
-        <Header homeLink="Home" />
+        <Header miau={miau} manejaClick={clickHandler} homeLink="Home" />
         {/**
          * _Acerca de lo elemento hijos de un componente_
          * los componentes pueden utilizarse como un cierre en si mismos,
@@ -29,8 +33,8 @@ class App extends Component {
          *    *<Home>*
          *      *<p>soy hijo de home</p>*
          *    *</Home>*
-        */}
-        <Home name={"Chaboncito"} initialAge={ 34 } />
+         */}
+        {/* <Home name={"Chaboncito"} initialAge={34} /> */}
       </div>
     );
   }
