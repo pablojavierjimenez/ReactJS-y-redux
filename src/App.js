@@ -3,7 +3,7 @@ import './App.css';
 
 // COMPONENTS
 import Home from './components/Home';
-import Header from './components/Header';
+import Header from './components/Header/Header.js';
 
 class App extends Component {
   render() {
@@ -22,10 +22,10 @@ class App extends Component {
          * _Acerca de lo elemento hijos de un componente_
          * los componentes pueden utilizarse como un cierre en si mismos,
          * eg: *<Home />*
-         * o tambien como elementos tag de apertura y cierre, los cuales pueden incluir 
-         * otros elementos html, o componentes 
+         * o tambien como elementos tag de apertura y cierre, los cuales pueden incluir
+         * otros elementos html, o componentes
          * estos seran recibidos en en la clase en el objeto _this.props.children_
-         * eg: 
+         * eg:
          *    *<Home>*
          *      *<p>soy hijo de home</p>*
          *    *</Home>*
