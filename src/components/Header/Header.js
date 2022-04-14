@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import logo from "../../logo.svg";
+import H1 from "../H1/H1";
 
 /**
  * @description Definiendo estilos en linea encapsulados dentro de el mismo componente
@@ -31,6 +32,7 @@ const styles = {
     pointerEvents: "none",
   },
 };
+
 /**
  * STATELESS component
  * in this kind of component the principal difference is
@@ -61,9 +63,9 @@ export default class Header extends Component {
     return (
       <div style={styles.header({backgroundColor})} onClick={this.updateBackground}>
         <img src={logo} style={styles.logo} className="App-logo" alt="logo" />
-        <h2 onClick={this.updateProps} className="App-title">
+        <H1 onClick={this.updateProps} className="App-title">
           {miau}
-        </h2>
+        </H1>
       </div>
     );
   }
