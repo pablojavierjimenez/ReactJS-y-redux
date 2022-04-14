@@ -9,4 +9,5 @@ THe readme file created by the crate-react-app command is [hete](./create-react-
 ## Section/branch List
 
 - Develop
-- Section Nº X
+- Section Nº 3: ReactJS con código
+- Section Nº 4: Agregando estilo a nuestra aplicación
