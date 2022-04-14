@@ -3,9 +3,12 @@ import logo from "../../logo.svg";
 
 /**
  * @description Definiendo estilos en linea encapsulados dentro de el mismo componente
- * @example Nº1:
- *    en este ejemplo definimos las propiedades de css dentro de un objeto
- *    estatico el cual luego pasamos como variable al atributo 'style={}'
+ * @example Nº1: HEADER
+ *    en este ejemplo definimos las propiedades de css dentro de un objeto,
+ *    estatico el cual luego pasamos como variable al atributo 'style={}'.
+ *    con lo que logramos que todo lo propio de el componente quede encapsulado
+ *    dentro del mismo, con lo que ganamos muchamayor consistencia
+ *    en la implementacion y reutilizacion del mismo
  *
  */
 const styles = {
