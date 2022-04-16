@@ -9,6 +9,32 @@ import ParagraphDinamicProps from "./components/Paragraph-dinamic-prop/Paragraph
 import FormularioSimple from "./components/FormularioSimple/FormularioSimple";
 
 class App extends Component {
+  constructor(){
+    super()
+    /**
+     * @description: El metodo 'FETCH' puede utilizarse con los siguientes vervos de HTTP:
+     *    GET, POST, PUT, DELETE
+     *    https://jsonplaceholder.typicode.com/users
+     *
+     * @example de uso: GET
+     *    fetch("https://jsonplaceholder.typicode.com/users")
+     *      .then(response => response.json())
+     *      .then(data => console.log(data))
+     */
+    fetch("https://jsonplaceholder.typicode.com/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: "Cornelio del rancho",
+        username: "corneldelrancho",
+      })
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+  }
+
   state = {
     miau: "bienvenido a Miau",
   };
