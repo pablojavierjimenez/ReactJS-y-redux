@@ -3,29 +3,27 @@ import React, { Component } from "react";
 export default class FormularioSimple extends Component {
   state = {
     errors: {},
-    formData: {},
   };
 
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({
-      formData: {
         [name]: value,
-      },
     });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { nombre, apellidos } = this.state;
-    if(this.validate(this.state.formData)) {
-      console.log("enviado", this.state.formData);
+    const { errors, ...formData } = this.state;
+    if(this.validate(formData)) {
+      console.log("enviado", this.state);
     } else {
       console.log("Hay campos con errores", this.state.errors);
     }
   };
 
-  validate({ nombre, apellidos }) {
+  validate(formData) {
+    const { nombre, apellidos } = formData;
     const errors = {};
     if (!nombre) errors.nombre = "El nombre es obligatorio";
     if (!apellidos) errors.apellidos = "El apellido es obligatorio";
