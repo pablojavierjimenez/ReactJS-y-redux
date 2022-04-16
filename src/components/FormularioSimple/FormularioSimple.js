@@ -37,14 +37,14 @@ export default class FormularioSimple extends Component {
     const { errors } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        {errors.nombre && <p>{errors.nombre}</p>}
+        {errors.nombre && <p><small><mark>{errors.nombre}</mark></small></p>}
         <input
           name="nombre"
           onChange={this.handleChange}
           type="text"
           placeholder="Nombre"
           />
-          {errors.apellidos && <p>{errors.apellidos}</p>}
+          {errors.apellidos && <p><small><mark>{errors.apellidos}</mark></small></p>}
         <input
           name="apellidos"
           onChange={this.handleChange}
