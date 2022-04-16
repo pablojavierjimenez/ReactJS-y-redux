@@ -12,3 +12,4 @@ THe readme file created by the crate-react-app command is [hete](./create-react-
 - Section Nº 3: ReactJS con código
 - Section Nº 4: Agregando estilo a nuestra aplicación
 - Section Nº 5: Formularios en ReactJS
+- Section Nº 6: AJAX
