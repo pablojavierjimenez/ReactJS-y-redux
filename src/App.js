@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Header from "./components/Header/Header.js";
 import Paragraph from "./components/Paragraph/Paragraph.js";
 import ParagraphDinamicProps from "./components/Paragraph-dinamic-prop/Paragraph-dinamic-prop.js";
+import FormularioSimple from "./components/FormularioSimple/FormularioSimple";
 
 class App extends Component {
   state = {
@@ -44,6 +45,11 @@ class App extends Component {
         <ParagraphDinamicProps onClick={this.cambiarTextoDelEstado}>
           {texto}
         </ParagraphDinamicProps>
+
+        {/**
+         * Seccion Nº5: formularios en react
+         */}
+         <FormularioSimple />
       </div>
     );
   }
