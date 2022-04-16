@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 
+const initialState = {
+  errors: {},
+};
+
 export default class FormularioSimple extends Component {
-  state = {
-    errors: {},
-  };
+  state = initialState;
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -17,6 +19,7 @@ export default class FormularioSimple extends Component {
     const { errors, ...formData } = this.state;
     if(this.validate(formData)) {
       console.log("enviado", this.state);
+      this.resetForm(event);
     } else {
       console.log("Hay campos con errores", this.state.errors);
     }
@@ -31,10 +34,20 @@ export default class FormularioSimple extends Component {
     return (Object.keys(errors).length === 0) ? true : false;
   };
 
+  resetForm(ev) {
+    ev.target.reset();
+    for (let key in this.state) {
+      delete this.state[key]
+    }
+    this.setState(initialState);
+  }
+
   render() {
     const { errors } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
+        <hr />
+        <h2>Formulario</h2>
         {errors.nombre && <p><small><mark>{errors.nombre}</mark></small></p>}
         <input
           name="nombre"
