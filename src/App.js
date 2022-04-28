@@ -10,15 +10,15 @@ import UserForm from "./components/UserForm/UserForm";
 class App extends Component {
 
   state = {
-    route: 'lista'
+    route: 'lista' // formulario
   };
 
   render() {
-
+    const ruta = this.state.route;
     return (
       <div className="App">
-        <UserList />
-        <UserForm />
+        {ruta === 'lista' && <UserList />}
+        {ruta === 'formulario' && <UserForm />}
       </div>
     );
   }
