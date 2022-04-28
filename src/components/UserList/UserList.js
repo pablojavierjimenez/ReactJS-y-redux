@@ -10,7 +10,7 @@ export default class UserList extends Component {
       <div>
         <h2>User List</h2>
         <Header />
-        <Lista />
+        <Lista users={users}/>
       </div>
     );
   }
