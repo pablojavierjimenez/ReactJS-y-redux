@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   state = {
-    route: "lista", // formulario
+    route: "formulario", // formulario
     users: [],
   };
 
