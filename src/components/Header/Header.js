@@ -9,10 +9,11 @@ const styles ={
 
 export default class Header extends Component {
   render() {
+    const { newUser } = this.props;
     return (
       <div>
         <h2 style={styles.inline}>Usuarios</h2>
-        <button style={styles.inline}>Nuevo Usuario</button>
+        <button style={styles.inline} onClick={newUser}>Nuevo Usuario</button>
       </div>
     )
   }

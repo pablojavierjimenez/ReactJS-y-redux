@@ -26,12 +26,22 @@ class App extends Component {
     });
   };
 
+  newUser = (user) => {
+    this.setState({
+      route: "formulario"
+    });
+  }
+
   render() {
     const ruta = this.state.route;
     return (
       <div className="App">
         {ruta === "lista" && (
-          <UserList users={this.state.users} handleClick={this.handleClick} />
+          <UserList
+            users={this.state.users}
+            handleClick={this.handleClick}
+            newUser={this.newUser}
+          />
         )}
         {ruta === "formulario" && <UserForm actualUser={this.state.selectedUser}/>}
       </div>
