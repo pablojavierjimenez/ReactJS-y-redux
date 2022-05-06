@@ -1,8 +1,7 @@
 import React, {Component } from "react";
 import { act } from "react-dom/test-utils";
 
-const validate = values =>{
-  console.log('sin errors',values);
+const validate = values => {
   const errors = {};
   if (!values.name){
     errors.name = 'Nombre campo es obligatorio'
@@ -33,14 +32,12 @@ export default class UserForm extends Component {
     e.preventDefault();
     const {errors, ...sinErrors} = this.state;
     const result = validate(sinErrors);
-    this.setState({
-      errors: result
-    })
+    this.setState({ errors: result });
+
     if (!Object.keys(result).length) {
       // envio
       e.target.reset();
     }
-    console.log(this.state);
   }
   render() {
     const { actualUser } = this.props;
@@ -54,7 +51,7 @@ export default class UserForm extends Component {
         </div>
         <div>
           <input name="email" type="email" placeholder="email" onChange={this.handleChange}/><br/>
-          {errors.email && <small><mark>{errors.email}</mark></small>}
+          {errors.email && <small><mark styles="background-color:red">{errors.email}</mark></small>}
         </div>
         <div>
           <input name="website" type="text" placeholder="website" onChange={this.handleChange}/><br/>
