@@ -1,5 +1,19 @@
 import React, { Component } from "react";
 
+const styles = {
+  ul: {
+    maxWidth: '500px',
+    width: '70%'
+  },
+  li: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  button:{
+    marginLeft:'10px',
+    marginTop: '4px'
+  }
+}
 export default class Lista extends Component {
   /**
    * @description Vamos a ver 2 formas de hacerlo
@@ -30,10 +44,13 @@ export default class Lista extends Component {
     const { users } = this.props;
     console.log('lista', users);
     return (
-      <ul>
+      <ul style={styles.ul}>
         {users.map((user) => (
-            <li key={user.id}>
-              {user.name}<button onClick={this.handleClick_curryng(user.id)}>edit</button>
+            <li key={user.id} style={styles.li}>
+              <span>
+                {user.name}
+              </span>
+              <button style={styles.button} onClick={this.handleClick_curryng(user.id)}>edit</button>
             </li>
           ))}
       </ul>

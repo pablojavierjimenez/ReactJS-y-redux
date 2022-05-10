@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   state = {
-    route: "formulario", // formulario
+    route: "lista", // formulario
     users: [],
   };
 
@@ -32,6 +32,17 @@ class App extends Component {
     });
   }
 
+  addNewUser = (user) => {
+    axios.post('https://jsonplaceholder.typicode.com/users', user)
+      .then(({data})=>{
+        const newData = this.state.users.concat(data);
+        this.setState({
+          users: newData,
+          route: 'lista'
+        })
+      })
+  }
+
   render() {
     const ruta = this.state.route;
     return (
@@ -43,7 +54,7 @@ class App extends Component {
             newUser={this.newUser}
           />
         )}
-        {ruta === "formulario" && <UserForm actualUser={this.state.selectedUser}/>}
+        {ruta === "formulario" && <UserForm actualUser={this.state.selectedUser} addUser={this.addNewUser}/>}
       </div>
     );
   }

@@ -24,7 +24,7 @@ export default class UserForm extends Component {
     this.setState({
       [target.name]: target.value
     });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   onSubmitForm = (e) => {
@@ -36,6 +36,8 @@ export default class UserForm extends Component {
 
     if (!Object.keys(result).length) {
       // envio
+      const {addUser} = this.props;
+      addUser(this.state);
       e.target.reset();
     }
   }
