@@ -27,6 +27,10 @@ export default class UserForm extends Component {
     // console.log(this.state);
   }
 
+  handleUpdate = () => {
+    console.log('is update!!!');
+  };
+
   onSubmitForm = (e) => {
     // console.log(e.target);
     e.preventDefault();
@@ -36,27 +40,35 @@ export default class UserForm extends Component {
 
     if (!Object.keys(result).length) {
       // envio
-      const {addUser} = this.props;
-      addUser(this.state);
+      const {addUser, initialValues, handleUpdate} = this.props;
+
+      if(initialValues.id) {
+        handleUpdate(initialValues.id, sinErrors);
+      } else {
+        this.handleUpdate(sinErrors);
+        addUser(this.state);
+      }
       e.target.reset();
     }
   }
+
   render() {
-    const { actualUser } = this.props;
+    const { actualUser, initialValues } = this.props;
     const {errors} = this.state;
+    console.log('actualuser', initialValues);
     return (
       <form onSubmit={this.onSubmitForm}>
         <h2>User Form {actualUser}</h2>
         <div>
-          <input name="name" type="text" placeholder="Nombre" onChange={this.handleChange}/><br/>
+          <input defaultValue={initialValues.name} name="name" type="text" placeholder="Nombre" onChange={this.handleChange}/><br/>
           {errors.name && <small><mark>{errors.name}</mark></small>}
         </div>
         <div>
-          <input name="email" type="email" placeholder="email" onChange={this.handleChange}/><br/>
+          <input defaultValue={initialValues.email} name="email" type="email" placeholder="email" onChange={this.handleChange}/><br/>
           {errors.email && <small><mark styles="background-color:red">{errors.email}</mark></small>}
         </div>
         <div>
-          <input name="website" type="text" placeholder="website" onChange={this.handleChange}/><br/>
+          <input defaultValue={initialValues.website} name="website" type="text" placeholder="website" onChange={this.handleChange}/><br/>
           {errors.website && <small><mark>{errors.website}</mark></small>}
         </div>
         <input name="submit" type="submit" value="send new User"/>

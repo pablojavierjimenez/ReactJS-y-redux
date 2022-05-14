@@ -43,18 +43,40 @@ class App extends Component {
       })
   }
 
+  updateUser = ( id, value) => {
+    console.log('is update!!!');
+    axios.put(`https://jsonplaceholder.typicode.com/users/${id}`, value)
+    .then(({data})=>{
+      const updatedUserList = this.state.users.map(user => {
+        if(user.id === id) return data;
+        else return user;
+      });
+      this.setState({
+        users: updatedUserList,
+        route: 'lista',
+        selectedUser: null
+      })
+    })
+  };
+
   render() {
-    const ruta = this.state.route;
+    const {route, users, selectedUser} = this.state;
+    const initialValues = selectedUser && users.find(user => user.id === selectedUser);
     return (
       <div className="App">
-        {ruta === "lista" && (
+        {route === "lista" && (
           <UserList
             users={this.state.users}
             handleClick={this.handleClick}
             newUser={this.newUser}
           />
         )}
-        {ruta === "formulario" && <UserForm actualUser={this.state.selectedUser} addUser={this.addNewUser}/>}
+        {route === "formulario" &&
+          <UserForm
+            initialValues={initialValues || {}}
+            actualUser={this.state.selectedUser}
+            addUser={this.addNewUser}
+            handleUpdate={this.updateUser}/>}
       </div>
     );
   }

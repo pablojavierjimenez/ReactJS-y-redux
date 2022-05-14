@@ -23,7 +23,12 @@ export default class Lista extends Component {
    *   un atributo data-id al boton, o en la propiedad id ponerle el id delñ usuario
    *   @example:
    *    <button id={user.id} onClick={this.handleClick}>edit</button>
-   *
+   */
+  handleClick = (e) => {
+    console.log('clicked id = ', e.target.getAttribute('id'));
+  };
+
+  /**
    ** 2. Usando el patron CURRING
    *  @example:
    *    const suma = a => b => a + b;
@@ -31,9 +36,6 @@ export default class Lista extends Component {
    *    suma2(3);
    * @param {*} e
    */
-  handleClick = (e) => {
-    console.log('clicked id = ', e.target.getAttribute('id'));
-  };
   handleClick_curryng = id => (e) => {
     const {handleClick} = this.props;
     handleClick(id);
