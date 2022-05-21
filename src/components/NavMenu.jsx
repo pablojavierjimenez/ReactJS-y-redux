@@ -8,7 +8,7 @@ export default class NavMenue extends Component {
             <header>
                 <Link to="/">Home</Link> | {" "}
                 <Link to="/invoices">Invoices</Link> | {" "}
-                <Link to="/test">tEST</Link>
+                <Link to="/test">Test</Link>
             </header>
         );
     }
