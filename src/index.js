@@ -9,8 +9,14 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Invoices from "./components/Invoices";
-import TestComponent from "./components/TestComponent";
+import Loadable from 'react-loadable';
+const Loader = x => Loadable({
+  loading: () => 'Cargando...',
+  loader: x
+});
+
+const TestComponent = Loader(() => import('./components/TestComponent'))
+const Invoices = Loader(() => import('./components/Invoices'))
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
