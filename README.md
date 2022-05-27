@@ -20,6 +20,5 @@ THe readme file created by the crate-react-app command is [hete](./create-react-
 ## Tech Stack
 - [Create React App](https://create-react-app.dev/docs/getting-started#creating-an-app)
 - [Yarn](https://yarnpkg.com/getting-started/install)
-- []()
-- []()
-- []()
+- [Redux](https://es.redux.js.org/)
+- [react-redux](https://www.npmjs.com/package/react-redux)
