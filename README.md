@@ -17,3 +17,9 @@ THe readme file created by the crate-react-app command is [hete](./create-react-
 - Section Nº 8: Manejando mejor las rutas: react-router
 - Section Nº 9: Manejando mejor el estado con Redux
 
+## Tech Stack
+- [Create React App](https://create-react-app.dev/docs/getting-started#creating-an-app)
+- [Yarn](https://yarnpkg.com/getting-started/install)
+- []()
+- []()
+- []()
