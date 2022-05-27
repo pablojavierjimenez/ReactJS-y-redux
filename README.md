@@ -16,3 +16,10 @@ THe readme file created by the crate-react-app command is [hete](./create-react-
 - Section Nº 7: Taller ABM de usuarios
 - Section Nº 8: Manejando mejor las rutas: react-router
 - Section Nº 9: Manejando mejor el estado con Redux
+
+## Tech Stack
+- [Create React App](https://create-react-app.dev/docs/getting-started#creating-an-app)
+- [Yarn](https://yarnpkg.com/getting-started/install)
+- [React Router](https://reactrouter.com/docs/en/v6/getting-started/installation#create-react-app)
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [React Loadable](https://www.npmjs.com/package/react-loadable)
