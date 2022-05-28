@@ -4,15 +4,15 @@ const DISMINUIR = 'CONTADOR/DISMINUIR';
 const SETEAR = 'CONTADOR/SETEAR';
 
 // ACTION CREATORS
-const incrementar = () => ({
+export const incrementar = () => ({
     type: INCREMENTAR,
 });
-const disminuir = () => ({
+export const disminuir = () => ({
     type: DISMINUIR,
 });
 
-const setear = (payload) => ({
-    type: DISMINUIR,
+export const setear = (payload) => ({
+    type: SETEAR,
     payload,
 });
 
@@ -25,7 +25,7 @@ export default function reducer(state = initialState, action) {
         case DISMINUIR:
             return state - 1;
             break;
-        case SETEAR: 
+        case SETEAR:
             return action.payload;
             break;
         default:
