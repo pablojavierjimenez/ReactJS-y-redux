@@ -16,6 +16,7 @@ const setear = (payload) => ({
     payload,
 });
 
+// REDUCER: deben retornar estados (states) Inmutables
 export default function reducer(state = initialState, action) {
     switch(action.type) {
         case INCREMENTAR:
