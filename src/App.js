@@ -5,6 +5,10 @@ import logo from "./logo.svg";
 import "./App.css";
 import { toHaveDisplayValue } from "@testing-library/jest-dom/dist/matchers";
 
+// FORMS
+import userForm from "./components/userForm";
+import UserForm from "./components/userForm";
+
 const styles = {
   header: {
     maxHeigh: "200px",
@@ -28,10 +32,17 @@ class App extends Component {
     const { value } = this.state;
     setear(Number(value));
   };
+
+  /**
+   * USERFORM
+   */
+  handleUserFormSubmit = payload => {
+    console.log('userForm', payload);
+  };
   render() {
     console.log(this.props);
     const { incrementar, disminuir, value } = this.props;
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div className="App">
         <header className="App-header" style={styles.header}>
@@ -46,6 +57,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <UserForm onSubmit={this.handleUserFormSubmit} />
         <section>
           <h4>{value}</h4>
           <button onClick={incrementar}>Incrementar</button>
@@ -59,7 +71,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log({ state });
+  // console.log({ state });
   return {
     value: state.contador,
   };
