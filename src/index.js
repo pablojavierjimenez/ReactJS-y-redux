@@ -4,12 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import { legacy_createStore } from "redux";
+import { legacy_createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import reducer from "./reducers";
+import { reducer as reduxForm } from "redux-form";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const store = legacy_createStore(reducer);
+const store = legacy_createStore(combineReducers({
+  contador: reducer,
+  form: reduxForm,
+}) );
 root.render(
   <Provider store={store}>
     <React.StrictMode>

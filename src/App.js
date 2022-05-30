@@ -36,9 +36,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header" style={styles.header}>
           <img src={logo} className="App-logo" alt="logo" style={styles.img} />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
+          <p>Sección 10: Eliminando boilerplate: redux-form</p>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -63,7 +61,7 @@ class App extends Component {
 const mapStateToProps = (state) => {
   console.log({ state });
   return {
-    value: state,
+    value: state.contador,
   };
 };
 
