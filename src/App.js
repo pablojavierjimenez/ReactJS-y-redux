@@ -40,9 +40,7 @@ class App extends Component {
     console.log('userForm', payload);
   };
   render() {
-    console.log(this.props);
     const { incrementar, disminuir, value } = this.props;
-    // console.log(this.state);
     return (
       <div className="App">
         <header className="App-header" style={styles.header}>

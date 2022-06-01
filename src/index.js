@@ -16,9 +16,9 @@ const store = legacy_createStore(combineReducers({
 }) );
 root.render(
   <Provider store={store}>
-    <React.StrictMode>
+
       <App />
-    </React.StrictMode>
+
   </Provider>
 );
 
